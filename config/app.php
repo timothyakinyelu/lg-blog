@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://larissagideon.herokuapp.com'),
+    'url' => env('APP_URL', 'http://www.larissagideon.com'),
 
     'asset_url' => env('ASSET_URL', null),
 
