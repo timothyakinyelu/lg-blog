@@ -42,7 +42,7 @@ class CategoriesController extends Controller
         
         $posts = Post::where('category_id', '=', $id)
                     ->with('category')
-                    ->with('photos')
+                    ->with('photo')
                     ->withCount('comments')
                     ->paginate(5);
 
@@ -65,7 +65,7 @@ class CategoriesController extends Controller
 
         // $category->parent = $request->input('parent');
         $category->name = $request->input('name');
-        $category->slug = $request->input('slug');
+        $category->slug = $category->name;
 
         $category->save();
 
@@ -90,7 +90,7 @@ class CategoriesController extends Controller
 
         // $category->parent = $request->input('parent');
         $category->name = $request->input('name');
-        $category->slug = $request->input('slug');
+        $category->slug = $category->name;
 
         $category->save();
 

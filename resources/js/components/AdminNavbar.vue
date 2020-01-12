@@ -19,9 +19,13 @@
         padding-left: 0;
     }
 
-    .v-list-group .v-list-item .v-list-itemm--link{
+    .v-list-group .v-list-item .v-list-item--link{
         position: relative;
         left: 0 !important;
+    }
+
+    .v-list-item__action {
+        margin-right: 3px !important;
     }
 </style>
 
@@ -56,7 +60,7 @@
                     </v-list-item-content>
                 </v-list-item> -->
                 <v-list-group no-action>
-                    <v-list-item slot="activator">
+                    <v-list-item slot="activator" style="padding-right: 0px;">
                         <v-list-item-action>
                             <v-icon color="orange">fa fa-luggage-cart</v-icon>
                         </v-list-item-action>

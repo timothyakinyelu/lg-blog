@@ -13,7 +13,7 @@
         <div class="row row-no-gutters" id="bottom-footer" >
             <div class="col-xs-12 col-md-5 text-center" >
                 <ul>
-                    <li class="small">© Copyright 2019 <strong>larissagideon.com</strong>. All Rights reserved.</li>
+                    <li class="small">© Copyright {{ new Date().getFullYear() }} <strong>larissagideon.com</strong>. All Rights reserved.</li>
                 </ul>
             </div>
         </div> <!--  end row  -->

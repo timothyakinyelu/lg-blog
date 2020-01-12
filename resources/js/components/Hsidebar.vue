@@ -140,10 +140,12 @@
     }
     .tm-aboutme__avatar {
         text-align: center;
+        display: grid;
+        justify-content: center;
     }
     .tm-aboutme__avatar--circle img {
         border-radius: 100%;
-        margin-left: 50px;
+        /* margin-left: 50px; */
     }
     .tm-aboutme__description {
         text-align: center;
@@ -184,9 +186,9 @@
         .sidebr-widgets {
             padding-left: 20px;
         }
-        .tm-aboutme__avatar--circle img {
+        /* .tm-aboutme__avatar--circle img {
             margin-left: 100px;
-        }
+        } */
     }
     
 </style>
@@ -201,7 +203,7 @@
                             <h3 class="widget-title" style="padding-top:10px;">About me</h3>
                             <div class="tm-aboutme">
                                 <div class="tm-aboutme__avatar tm-aboutme__avatar--circle">
-                                    <img src="https://lily.thememove.com/file/2015/07/avatar.jpg" alt="">
+                                    <img src="/images/rissa2.jpg" alt="">
                                 </div>
                                 <div class="tm-aboutme__description">Far far away, behind the word mountains, far from the countries Consonantia...</div>
                                 <ul class="tm-aboutme__social">

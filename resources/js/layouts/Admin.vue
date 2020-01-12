@@ -1,33 +1,3 @@
-<!-- <style scoped>
-  .main-content {
-    margin-top: 10px;
-    width: auto;
-    margin-left: 270px;
-    margin-right: 20px;
-  }
-</style>
-
-<template>
-  <div id="admin-layout">
-    <admin-navbar></admin-navbar>
-    <div class="main-content">
-        <router-view></router-view>
-    </div>
-  </div>
-</template>
-
-<script>
-  import AdminNavbar from '../components/AdminNavbar'
-  export default {
-    components: {
-      AdminNavbar
-    },
-    created() {
-      
-    }
-  }
-</script>
--->
 
 <template>
   <v-app id="inspire">

@@ -1,37 +1,4 @@
 
-<style scoped>
-    .theme--light.v-data-table {
-        background-color: #f8f9fa;
-    }
-
-    .theme--dark.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
-        background-color: #6cb2eb;
-    }
-
-    .v-btn span a {
-        color: #ffffff;
-        text-decoration: none;
-    }
-
-    .v-dialog__content>.v-dialog{
-      overflow-y: visible !important;
-    }
-
-    .v-text-field--single-line {
-        position: absolute;
-        /* left: 13vw; */
-    }
-
-    .search {
-      left: 13vw;
-    }
-
-    /* .v-select {
-      left: 25vw;
-      width: 10vw;
-    } */
-</style>
-
 <template>
   <v-data-table
     :headers="headers"
@@ -64,18 +31,8 @@
                     <v-flex xs12 sm6 md4>
                         <v-text-field v-model="editedItem.name" label="Name"></v-text-field>
                     </v-flex>
-                    <v-flex xs8 sm6 md4>
+                    <!-- <v-flex xs8 sm6 md4>
                         <v-text-field v-model="editedItem.slug" label="Slug"></v-text-field>
-                    </v-flex>
-                    <!-- <v-flex xs12 sm6 md4>
-                        <v-select
-                        v-model="editedItem.category"
-                        :items="categories"
-                        item-text="name"
-                        label="Parent"
-                        return-object
-                        single-line
-                        ></v-select>
                     </v-flex> -->
                 </v-layout>
               </v-container>
@@ -142,12 +99,12 @@
       editedItem: {
         category: '',
         name: '',
-        slug: '',
+        // slug: '',
       },
       defaultItem: {
         category: '',
         name: '',
-        slug: '',
+        // slug: '',
       },
     }),
 
@@ -209,13 +166,13 @@
             id: this.editedItem.id,
             // parent: this.editedItem.category.id,
             name: this.editedItem.name,
-            slug: this.editedItem.slug,
+            // slug: this.editedItem.slug,
           });
         } else {
           this.$store.dispatch('addCategory', {
             // parent: this.editedItem.category.id,
             name: this.editedItem.name,
-            slug: this.editedItem.slug,
+            // slug: this.editedItem.slug,
           });
         }
         this.close()
@@ -223,3 +180,36 @@
     },
   }
 </script>
+
+<style scoped>
+    .theme--light.v-data-table {
+        background-color: #f8f9fa;
+    }
+
+    .theme--dark.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+        background-color: #6cb2eb;
+    }
+
+    .v-btn span a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .v-dialog__content>.v-dialog{
+      overflow-y: visible !important;
+    }
+
+    .v-text-field--single-line {
+        position: absolute;
+        /* left: 13vw; */
+    }
+
+    .search {
+      left: 13vw;
+    }
+
+    /* .v-select {
+      left: 25vw;
+      width: 10vw;
+    } */
+</style>

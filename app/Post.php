@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\Encryptable;
+use Illuminate\Support\Str;
 use Crypt;
 
 class Post extends Model
@@ -13,6 +14,11 @@ class Post extends Model
     // protected $encryptable = [
     //     'content'
     // ];
+
+    public function setSlugAttribute($value) {
+        // grab the title and slugify it
+        $this->attributes['slug'] = Str::slug($this->title);
+    } 
 
     public function setContentAttribute($value)
     {

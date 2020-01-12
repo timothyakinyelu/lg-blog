@@ -168,8 +168,8 @@ class PostsController extends Controller
             $post = new Post();
 
             $post->category_id = $request->input('category_id');
-            $post->slug = $request->input('slug');
             $post->title = $request->input('title');
+            $post->slug = $post->title;
             $post->content = clean($request->input('content'));
 
             $post->save();
@@ -185,7 +185,7 @@ class PostsController extends Controller
                 $featured = $request->file('featured');
                 
                 $destinationPath = public_path('uploads');
-                $filename = $featured->getClientOriginalName();
+                $filename = time() . '.' . $featured->getClientOriginalName();
                 $featured->move($destinationPath, $filename);
         
                 $image = new Photo ([
@@ -229,8 +229,8 @@ class PostsController extends Controller
         */
         if( Auth::user()->can('update', $post ) ){
             $post->category_id = $request->input('category_id');
-            $post->slug = $request->input('slug');
             $post->title = $request->input('title');
+            $post->slug = $post->title;
             $post->content = clean($request->input('content'));
     
             $post->save();
@@ -244,7 +244,7 @@ class PostsController extends Controller
             if($request->hasFile('featured')) {
                 $featured = $request->file('featured');
                 $destinationPath = public_path('uploads');
-                $filename = $featured->getClientOriginalName();
+                $filename = time() . '.' . $featured->getClientOriginalName();
                 $featured->move($destinationPath, $filename);
 
                 $oldPhoto = $post->photo;
@@ -259,7 +259,7 @@ class PostsController extends Controller
                 
                 $image->save();
                 $oldPhoto->delete();
-                Storage::delete($oldFileName);
+                unlink(public_path('/uploads/' .$filename ));
             }
     
             return response()->json([
@@ -343,7 +343,7 @@ class PostsController extends Controller
         if($request->hasFile('file')) {
             $image = $request->file('file'); 
             $destinationPath = public_path('uploads');
-            $filename = $image->getClientOriginalName();
+            $filename = time() . '.' . $image->getClientOriginalName();
             $image->move($destinationPath, $filename);
     
             $image = new ckImage ([
@@ -365,7 +365,7 @@ class PostsController extends Controller
     {
         $image = ckImage::find($id);
 
-        Storage::delete($image->file);
+        unlink(public_path('/uploads/' .$image->file ));
         $image->delete();
 
         return response()->json([

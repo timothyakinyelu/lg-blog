@@ -14,14 +14,13 @@
                                 <div class="posts swiper-container tw--mx-4 swiper-container-horizontal">
                                     <div class="container">
                                         <div class="row">
-                                            <div class="no-posts" >
+                                            <div class="no-posts" v-if="catPosts.data.length < 1">
                                                 <h1><strong>No Posts Yet!</strong></h1>
                                             </div>
                                             <div v-if="catPosts" class="swiper-wrapper tw-border-box tw-mb-8" style="margin-bottom:0;" >
                                                 <div class="tw-w-full tw-h-auto tw-px-4 
                                                     tw-mb-8 swiper-slide md_tw-w-1/2 
                                                     lg_tw-w-1/2 swiper-slide-active" 
-                                                    style="width: 475px;" 
                                                     v-for="post in catPosts.data" v-bind:key="post.id"
                                                     >
                                                     <article class="post-style-cover has-mode 
